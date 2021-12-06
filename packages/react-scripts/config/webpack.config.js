@@ -452,6 +452,15 @@ module.exports = function (webpackEnv) {
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
                     require.resolve('react-refresh/babel'),
+
+                  // Custom plugins added in "react-scripts-decorators-metadata"
+                  ...(useTypeScript
+                    ? [
+                        '@babel/plugin-proposal-decorators',
+                        'babel-plugin-transform-typescript-metadata',
+                        'babel-plugin-parameter-decorator',
+                      ]
+                    : []),
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/

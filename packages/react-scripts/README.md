@@ -1,5 +1,22 @@
 # react-scripts
 
+Custom `react-scripts` with extended babel config. Supports decorators and metadata emitting.
+
+`create-react-app` doesn't use typescript for transpiling `.ts` files. And params like:
+
+```json
+...
+"emitDecoratorMetadata": true,
+"experimentalDecorators": true,
+...
+```
+
+do not have any effect.
+
+So if you want to use decorators and types metadata you should add some babel plugins. Which I did.
+
+---
+
 This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).<br>
 Please refer to its documentation:
 
